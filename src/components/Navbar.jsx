@@ -31,15 +31,13 @@ const Navbar = () => {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-[160px]">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <BrandHeader
-              size="md"
-              markOnlyOnMobile={false}
-              responsive={true}
-              wrapperClass="h-[144px] sm:h-[144px]"
-            />
-          </Link>
+          {/* Brand Header */}
+          <div className="flex flex-col">
+            <Link to="/" className="text-2xl font-extrabold text-navy-900 hover:text-navy-700 transition-colors">
+              THE GREGGORY FOUNDATION LTD
+            </Link>
+            <p className="text-sm text-teal-700 font-medium">Your Vision Delivered with Trust</p>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

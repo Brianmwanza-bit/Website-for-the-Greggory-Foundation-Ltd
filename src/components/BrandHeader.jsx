@@ -18,60 +18,45 @@ const BrandMark = ({ className = '' }) => (
 const BrandHeader = ({
   align = 'left',
   size = 'md',
-  markOnlyOnMobile = true,
-  markSrc = '/phoenix.png',
-  wordmark = 'THE GREGGORY FOUNDATION. LTD',
+  wordmark = 'THE GREGGORY FOUNDATION LTD',
   tagline = 'Your Vision Delivered with Trust',
-  fullSrc = '/brand-header.png/b1.PNG',
-  heightClass,
-  responsive = false,
-  wrapperClass,
+  wrapperClass = '',
 }) => {
-  const [fullError, setFullError] = React.useState(false)
-  const [imgError, setImgError] = React.useState(false)
   const isCenter = align === 'center'
   const sizes = {
-    sm: { icon: 'w-9 h-9', title: 'text-lg', tagline: 'text-xs', full: 'h-10 sm:h-12' },
-    md: { icon: 'w-12 h-12', title: 'text-2xl', tagline: 'text-sm', full: 'h-12 sm:h-14' },
-    lg: { icon: 'w-14 h-14', title: 'text-3xl', tagline: 'text-base', full: 'h-14 sm:h-16' },
+    sm: { 
+      title: 'text-lg', 
+      tagline: 'text-xs',
+      padding: 'px-3 py-2',
+      border: 'border-2'
+    },
+    md: { 
+      title: 'text-2xl', 
+      tagline: 'text-sm',
+      padding: 'px-4 py-3',
+      border: 'border-2'
+    },
+    lg: { 
+      title: 'text-3xl', 
+      tagline: 'text-base',
+      padding: 'px-6 py-4',
+      border: 'border-2'
+    },
   }
   const s = sizes[size] || sizes.md
-  // Backward-compat: if callers passed heightClass/responsive, map to wrapper sizing.
-  const computedWrapper = wrapperClass
-    ? wrapperClass
-    : (responsive
-        ? (heightClass ? heightClass : 'h-auto max-h-12 sm:max-h-14')
-        : (heightClass ? heightClass : s.full))
-  const iconHeight = heightClass ? heightClass : s.icon
 
   return (
-    <div className={`flex items-center ${isCenter ? 'justify-center' : ''} gap-3 select-none ${computedWrapper}`}>
-      {/* Prefer exact combined logo image if present */}
-      {(!fullError && fullSrc) ? (
-        <img
-          src={fullSrc}
-          alt="The Greggory Foundation — Brand Logo"
-          className={`flex-shrink-0 object-contain h-full w-auto`}
-          onError={() => setFullError(true)}
-        />
-      ) : (
-        <>
-          {imgError || !markSrc ? (
-            <BrandMark className={`h-full w-auto flex-shrink-0`} />
-          ) : (
-            <img
-              src={markSrc}
-              alt="Phoenix mark"
-              className={`flex-shrink-0 object-contain h-full w-auto`}
-              onError={() => setImgError(true)}
-            />
-          )}
-          <div className={`${isCenter ? 'text-center' : ''}`}>
-            <div className={`${markOnlyOnMobile ? 'hidden sm:block' : ''} ${s.title} font-extrabold tracking-wide uppercase text-navy-900 leading-tight`}>{wordmark}</div>
-            <div className={`${markOnlyOnMobile ? 'hidden sm:block' : ''} ${s.tagline} text-blue-600 mt-0.5`}>{tagline}</div>
-          </div>
-        </>
-      )}
+    <div className={`inline-block bg-white/90 shadow-md ${s.border} border-navy-900/20 rounded-lg ${s.padding} ${isCenter ? 'mx-auto' : ''} ${wrapperClass}`}>
+      <div className={`flex flex-col ${isCenter ? 'items-center text-center' : 'items-start'}`}>
+        <h1 className={`${s.title} font-extrabold text-navy-900`}>
+          {wordmark}
+        </h1>
+        {tagline && (
+          <p className={`${s.tagline} font-medium text-teal-700 mt-1`}>
+            {tagline}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

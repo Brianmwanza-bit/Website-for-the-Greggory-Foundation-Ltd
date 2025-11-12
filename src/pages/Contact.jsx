@@ -311,8 +311,10 @@ const Contact = () => {
                     <Twitter size={24} />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.facebook.com/profile.php?id=61583677166945" 
                     className="bg-white p-3 rounded-lg text-navy-900 hover:bg-teal-600 hover:text-white transition-colors shadow-md"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Facebook size={24} />
                   </a>

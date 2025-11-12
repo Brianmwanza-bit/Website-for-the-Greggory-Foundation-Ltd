@@ -1,7 +1,7 @@
 {
-  "name": "greggory-foundation-website",
+  "name": "greggory-foundation-ltd",
   "version": "1.0.0",
-  "description": "The Greggory Foundation Ltd - Project Management Consultancy Website",
+  "description": "Greggory Foundation Ltd - Project Management Consultancy Website",
   "private": true,
   "scripts": {
     "dev": "vite",

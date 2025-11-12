@@ -11,8 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex flex-col mb-4">
-              <BrandHeader size="md" markOnlyOnMobile={false} />
+            <div className="mb-6">
+              <Link to="/">
+                <h2 className="text-2xl font-bold text-white">The Greggory Foundation</h2>
+                <p className="text-teal-400 font-medium">Project Management Consultancy</p>
+              </Link>
             </div>
             <p className="text-gray-300 mb-4">
               Strategic Project Management for Modern Business. Turning your vision into successfully managed projects.
@@ -24,7 +27,12 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-teal-400 transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-teal-400 transition-colors">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61583677166945" 
+                className="text-gray-300 hover:text-teal-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Facebook size={20} />
               </a>
             </div>

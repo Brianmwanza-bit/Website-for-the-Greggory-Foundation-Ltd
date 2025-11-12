@@ -5,30 +5,26 @@ const About = () => {
     {
       name: 'Brian Maundu Mwanza',
       role: 'Chief Executive Officer (CEO)',
-      image: '',
       credentials: 'PMP, PMI-ACP, PRINCE2 Practitioner',
       bio: 'Leads The Greggory Foundation Ltd. with a focus on strategic project delivery, operational excellence, and client value.'
     },
     {
-      name: 'Sarah Mitchell',
+      name: 'Brian Maundu Mwanza',
       role: 'Director of Operations',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-      credentials: 'Lean Six Sigma Black Belt, Scrum Master',
-      bio: 'Expert in operational excellence and continuous improvement with 15+ years in manufacturing and services.'
+      credentials: 'PMP, PMI-ACP, PRINCE2 Practitioner',
+      bio: 'Oversees all operational aspects with a focus on efficiency, process improvement, and service delivery.'
     },
     {
-      name: 'Marcus Thompson',
+      name: 'Brian Maundu Mwanza',
       role: 'Head of Innovation',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-      credentials: 'MBA, Certified Innovation Leader',
-      bio: 'Specializes in driving innovation projects and digital transformation for Fortune 500 companies.'
+      credentials: 'PMP, PMI-ACP, PRINCE2 Practitioner',
+      bio: 'Drives innovation and digital transformation initiatives to keep the company at the forefront of project management.'
     },
     {
-      name: 'Elena Rodriguez',
+      name: 'Brian Maundu Mwanza',
       role: 'Senior Project Manager',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
-      credentials: 'PMP, CSM, Agile Coach',
-      bio: 'Proven track record delivering complex, multi-million dollar projects in healthcare and technology.'
+      credentials: 'PMP, PMI-ACP, PRINCE2 Practitioner',
+      bio: 'Personally manages key client projects, ensuring successful delivery and client satisfaction.'
     }
   ]
 
@@ -63,7 +59,7 @@ const About = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About The Greggory Foundation</h1>
             <p className="text-xl text-gray-300">
-              Empowering organizations through expert project management since 2010
+              Empowering organizations through expert project management since 2021
             </p>
           </div>
         </div>
@@ -209,8 +205,14 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="w-full h-64 bg-white border border-gray-200"></div>
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="relative">
+                  <img 
+                    src={member.image} 
+                    alt={`${member.name}, ${member.role}`}
+                    className="w-full h-64 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-navy-900 mb-1">{member.name}</h3>
                   <p className="text-teal-600 font-semibold mb-2">{member.role}</p>
